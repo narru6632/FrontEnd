@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>H07Img.html</title>
+</head>
+<body>
+    <h2>img 태그</h2>
+
+    <h3>이미지를 원본크기대로 표시하기</h3>
+    <!-- 가로 세로 크기를 지정하지 않을 시 원본크기로 표시 -->
+    <img src="./images/1.png " alt="스펀지밥">
+
+    <h2>이미지 크기설정</h2>
+    <!-- 가로사이즈만 지정 시 세로사이즈는 비율에 맞게 자동조정됨 -->
+    <img src="./images/1.png" width="100" alt="스폰지밥" />
+    <!-- 가로, 세로사이즈를 동시에 지정하면 비율이 맞지않아 이미지가 왜곡될 수 있다. < 주의-->
+    <img src="./images/2.png" width="100" height="200" alt="징징이" />
+    <!-- 따라서 대부분의 경우 이미지 사이지는 지정하지 않는다-->
+    <img src="./images/2.png" alt="징징이" />
+
+    <h2>이미지에 링크걸기</h2>
+
+    <a href="https://koreavc.or.kr/" target = "_blank">
+        <img src="./images/logo.png" alt="로고" />
+    </a>
+
+    <h2>외부에 있는 이미지 가져오기</h2>
+    <a href="https://bu.tjoeun.co.kr/" target="_blank">
+        <img src="https://bu.tjoeun.co.kr/images/logo.gif?v=20190918" alt="서울IT아카데미" />
+    </a>
+
+    <!-- 
+        이미지를 마치 맵(지도) 처럼 분할해서 여러개의 링크를 걸 수 있게 해주는 태그
+        shape 속성에 값을 지정할 때
+            rectangle = rec와 동일
+            circle = circ와 동일
+            polycon = poly 와 같이 줄여서 사용가능
+        <map>의 name속성과 <img>의 usemap의 속성값만 일치하면
+            위치는 어디든 상관없이 선언가능
+        사각형과 원을 제외한 모든 도형은 모두 다각형으로 표현된다
+        좌표는 그림판을 이용하여 참조
+    -->
+
+    <h2>이미지맵 사용하기</h2>
+    <img src="./images/Map01.png" alt="이미지맵" usemap="#MyImage">
+    <map name="MyImage">
+
+            <!-- coords = "각 꼭지점의 x, y좌표1, x, y좌표2..." -->
+            <area shape="poly" coords="70,128, 174,128,71,231,174,230"
+                href="http://daum.net" alt="다음 바로가기">
+        
+            <!-- coords = "중심점의 x, y 좌표, 반지름"-->
+            <area shape="circle" alt="구글 바로가기"
+            coords="248,179,51" href="http://google.com"
+            target="_blank" />
+            
+            <area shape="polygon" alt="네이트 바로가기"
+                coords="498,126, 445,180, 498,232, 551,180"
+                href="http://nate.com" >
+
+
+
+
+
+        </map>
+</body>
+</html>
